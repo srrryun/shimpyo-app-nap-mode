@@ -4,7 +4,7 @@
 
 현대자동차그룹 차량용 앱 개발 공모전 출품작 · 팀 **SOLVIX**
 
-- 🎬 시연 영상: (YouTube 링크)
+- 🎬 시연 영상: https://www.youtube.com/watch?v=bB3rJl77mck
 - 📦 APK 받기: [Releases](../../releases)
 
 <!-- 화면 캡처를 docs/screenshots 폴더에 넣으면 아래에 보입니다 -->
