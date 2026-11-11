@@ -20,9 +20,10 @@ android {
 
     buildTypes {
         release {
+            // 코드 압축(R8)은 끈다: 일부 패키지만 압축하면 Kotlin 클래스 접근 오류(IllegalAccessError)로
+            // 앱이 켜지자마자 꺼졌다 (11/12 release APK 확인). 공모전 제출용이라 압축 없이 배포한다.
             optimization {
-                enable = true
-                packageScope = setOf("androidx.**", "kotlin.**", "kotlinx.**")
+                enable = false
             }
         }
     }
