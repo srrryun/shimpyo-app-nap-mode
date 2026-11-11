@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  쉼표 앱 아이콘 앞 그림: 눕힌 쉼표 (로고 A, 2026-11-10).
+  원본 도안은 100×100 좌표. 적응형 아이콘의 안전 영역(가운데 66dp) 안에 들어오도록
+  0.66배로 줄이고 가운데로 옮겼다. 모양을 고칠 때는 두 path 의 pathData 만 바꾸면 된다.
+  연한 부분(연보라 파랑)을 먼저 그리고, 남색 몸통을 위에 겹쳐 그린다.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <group
+        android:scaleX="0.66"
+        android:scaleY="0.66"
+        android:translateX="18.7"
+        android:translateY="18">
+        <path
+            android:fillColor="#6D8BD6"
+            android:pathData="M59,47 C65,40 72,31 83,31 C91,31 95,37 93,42 C90,51 81,55 72,55 C66,54 62,51 59,47 Z" />
+        <path
+            android:fillColor="#0E1A4A"
+            android:pathData="M12,54 C12,41 24,33 37,34 C47,35 53,41 59,47 C66,53 73,55 81,53 C87,51 91,47 93,42 C92,61 76,76 53,77 C31,78 12,68 12,54 Z" />
+    </group>
+</vector>

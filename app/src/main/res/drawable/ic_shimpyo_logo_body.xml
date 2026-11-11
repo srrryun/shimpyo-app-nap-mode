@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 쉼표 로고 A 의 남색 몸통 (로딩 화면에서 따로 움직이려고 나눔). ic_shimpyo_logo.xml 과 같은 좌표라 겹치면 원래 로고가 된다. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="84dp"
+    android:height="48dp"
+    android:viewportWidth="84"
+    android:viewportHeight="48">
+    <group android:translateX="-11.5" android:translateY="-30.5">
+        <path android:fillColor="#0E1A4A" android:pathData="M12,54 C12,41 24,33 37,34 C47,35 53,41 59,47 C66,53 73,55 81,53 C87,51 91,47 93,42 C92,61 76,76 53,77 C31,78 12,68 12,54 Z" />
+    </group>
+</vector>

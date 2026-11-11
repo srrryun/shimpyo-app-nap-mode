@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 쉼표 앱 안 아이콘 (선 그림, 색은 코드에서 입힘) -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="28dp"
+    android:height="28dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#FF000000"
+        android:strokeWidth="2.2"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M3,19 L3,7 M3,15 L21,15 L21,19 M21,15 L21,12.5 C21,11.1 19.9,10 18.5,10 L11,10 L11,15 M6.5,12.5 C6.5,11.7 7.2,11 8,11 C8.8,11 9.5,11.7 9.5,12.5 C9.5,13.3 8.8,14 8,14 C7.2,14 6.5,13.3 6.5,12.5 Z" />
+</vector>

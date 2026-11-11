@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 테마에서 쓰는 쉼표 색 (코드 쪽 색은 ui/ShimpyoDesign.kt 의 ShimpyoColors) -->
+<resources>
+    <color name="shimpyo_background">#F6F3EE</color>
+</resources>

@@ -1,0 +1,25 @@
+*.iml
+.gradle
+/local.properties
+/.idea/caches
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+/.idea/navEditor.xml
+/.idea/assetWizardSettings.xml
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+local.properties
+
+# 쉼표: 올리지 않을 것
+_backup_*/
+.kotlin/
+*.jks
+*.keystore
+*.apk
+*.aab
+/app/release/
+/.idea/

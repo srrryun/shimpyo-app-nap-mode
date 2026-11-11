@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  디버그 빌드에만 합쳐지는 매니페스트 (2단계 보안 D, 설계서 P-05).
+  개발용 차량 기능 점검 화면은 시트·무드등을 직접 움직이는 시험 버튼이 있어서
+  출시(release) 빌드에는 넣지 않는다. 코드는 main 에 있지만, 여기 선언이 없으면 열 수 없다.
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <application>
+        <!-- 앱 아이콘(런처)은 만들지 않는다. 쉼표 홈의 "차량 기능 점검 화면 (개발용)" 버튼으로만 연다.
+             (런처로 두면 Android Studio Run 이 이 화면을 먼저 열고, 다른 앱도 부를 수 있게 된다) -->
+        <activity
+            android:name="com.example.hyundaitest.VehicleCheckActivity"
+            android:exported="false"
+            android:label="차량 기능 점검" />
+    </application>
+
+</manifest>

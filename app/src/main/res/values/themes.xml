@@ -1,0 +1,18 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!--
+      쉼표 앱 테마 (3단계 UI).
+      화면 색은 코드(ui/ShimpyoDesign.kt)에서 정하고, 여기서는 위쪽 보라색 막대를 없애고
+      바탕·상태 표시줄을 앱 색에 맞춘다. 낮/밤 모드와 상관없이 같은 테마를 쓴다(values-night 도 같음).
+    -->
+    <style name="Theme.HYUNDAItest" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">#0E1A4A</item>
+        <item name="colorPrimaryVariant">#0B1238</item>
+        <item name="colorOnPrimary">#FFFFFF</item>
+        <item name="colorSecondary">#6D8BD6</item>
+        <item name="colorSecondaryVariant">#2F4A9A</item>
+        <item name="colorOnSecondary">#FFFFFF</item>
+        <item name="android:windowBackground">@color/shimpyo_background</item>
+        <item name="android:statusBarColor">@color/shimpyo_background</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+</resources>

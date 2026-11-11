@@ -1,0 +1,18 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!--
+      쉼표 앱 테마 — 어두운 모드 (11/11 다크 모드 추가).
+      화면 색은 코드(ui/ShimpyoDesign.kt, ShimpyoTheme.isDark)에서 정하고, 여기서는 창 바탕·상태 표시줄·스위치 같은
+      기본 부품을 어둡게 맞춘다.
+    -->
+    <style name="Theme.HYUNDAItest" parent="Theme.MaterialComponents.NoActionBar">
+        <item name="colorPrimary">#8FA7E6</item>
+        <item name="colorPrimaryVariant">#4A66C4</item>
+        <item name="colorOnPrimary">#0A0F2C</item>
+        <item name="colorSecondary">#8FA7E6</item>
+        <item name="colorSecondaryVariant">#A9BDF2</item>
+        <item name="colorOnSecondary">#0A0F2C</item>
+        <item name="android:windowBackground">@color/shimpyo_background</item>
+        <item name="android:statusBarColor">@color/shimpyo_background</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+</resources>

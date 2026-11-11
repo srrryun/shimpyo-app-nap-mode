@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- 읽기 전용 점검 화면에서 쓰는 Vehicle SDK 조회 권한 (protectionLevel="normal").
+         SDK 소스의 @RequiresPermission 기준. -->
+    <uses-permission android:name="pleos.car.permission.CAR_SEATS" />
+    <uses-permission android:name="pleos.car.permission.CAR_CLIMATE" />
+    <uses-permission android:name="pleos.car.permission.CAR_LIGHTS" />
+    <uses-permission android:name="pleos.car.permission.CAR_WINDOWS" />
+    <uses-permission android:name="pleos.car.permission.CAR_DOORS" />
+    <uses-permission android:name="pleos.car.permission.CAR_DRIVE" />
+    <uses-permission android:name="pleos.car.permission.CAR_ENERGY" />
+
+    <!-- 제어 테스트용 (사용자가 버튼을 누를 때만 사용). SDK 구현의 RequiresCustomPermission 기준. -->
+    <uses-permission android:name="pleos.car.permission.CONTROL_CAR_LIGHTS" />
+    <uses-permission android:name="pleos.car.permission.CONTROL_CAR_SEATS" />
+    <!-- 2단계 휴식 환경 제어: 공조(전원·온도·풍량·내기순환). 블라인드·문 제어는 하지 않아 CONTROL_CAR_WINDOWS/DOORS 는 선언하지 않는다. -->
+    <uses-permission android:name="pleos.car.permission.CONTROL_CAR_CLIMATE" />
+
+    <!-- 주차 상태 자동 확인 (설계서 S-01, 읽기만 함): 안드로이드 표준 PARKING_BRAKE_ON · GEAR_SELECTION.
+         Pleos 기어 읽기는 위의 CAR_DRIVE 로 충분하다. -->
+    <uses-permission android:name="android.car.permission.CAR_POWERTRAIN" />
+
+    <!-- 쉼표 1단계: 휴식 타이머 포그라운드 서비스, 휴식 중 알림 (Android 13+ 런타임 요청) -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+    <application
+        android:name=".ShimpyoApplication"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.HYUNDAItest">
+
+        <!-- 안드로이드 표준 차량 속성(android.car). 없는 기기에서도 앱은 설치·실행된다. -->
+        <uses-library
+            android:name="android.car"
+            android:required="false" />
+
+        <!-- 쉼표 홈 (앱 시작 화면). Android Studio Run 은 목록에서 첫 번째 런처 화면을 연다. -->
+        <activity
+            android:name=".ui.HomeActivity"
+            android:exported="true"
+            android:label="쉼표">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- 휴식 진행 · 깨어남 케어 · 완료 -->
+        <activity
+            android:name=".ui.NapFlowActivity"
+            android:exported="false"
+            android:label="쉼표"
+            android:launchMode="singleTop" />
+
+        <!-- 휴식 중 앱이 꺼지지 않게 붙잡아 두는 서비스 -->
+        <service
+            android:name=".nap.NapTimerService"
+            android:exported="false"
+            android:foregroundServiceType="specialUse">
+            <property
+                android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
+                android:value="Keeps the nap timer and wake-up alarm running while the user rests in a parked vehicle." />
+        </service>
+
+        <!-- 3단계 UI 화면들. 모두 앱 안에서만 열린다(exported=false) -->
+        <activity
+            android:name=".ui.VehicleStatusActivity"
+            android:exported="false"
+            android:label="차 상태" />
+        <activity
+            android:name=".ui.BambooActivity"
+            android:exported="false"
+            android:label="대나무숲"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".ui.StartConfirmActivity"
+            android:exported="false"
+            android:label="시작 확인" />
+        <activity
+            android:name=".ui.SettingsActivity"
+            android:exported="false"
+            android:label="설정" />
+        <activity
+            android:name=".ui.BambooRecordActivity"
+            android:exported="false"
+            android:label="보관한 이야기" />
+
+        <!-- 보안 상태 화면 (2단계 보안 F). 다른 앱이 열 수 없게 exported=false -->
+        <activity
+            android:name=".ui.SecurityStatusActivity"
+            android:exported="false"
+            android:label="보안 상태" />
+
+        <!-- 개발용 차량 기능 점검 화면(시트 제어 시험 포함)은 디버그 빌드에만 들어간다:
+             app/src/debug/AndroidManifest.xml (2단계 보안 D, 설계서 P-05) -->
+    </application>
+
+</manifest>

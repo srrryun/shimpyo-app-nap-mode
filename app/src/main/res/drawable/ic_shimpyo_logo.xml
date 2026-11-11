@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 쉼표 로고 A (배경 없음). 앱 안 화면용. 도안 좌표 100×100 중 쉼표가 있는 부분만 보이게 옮겼다. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="84dp"
+    android:height="48dp"
+    android:viewportWidth="84"
+    android:viewportHeight="48">
+    <group android:translateX="-11.5" android:translateY="-30.5">
+        <path android:fillColor="#6D8BD6" android:pathData="M59,47 C65,40 72,31 83,31 C91,31 95,37 93,42 C90,51 81,55 72,55 C66,54 62,51 59,47 Z" />
+        <path android:fillColor="#0E1A4A" android:pathData="M12,54 C12,41 24,33 37,34 C47,35 53,41 59,47 C66,53 73,55 81,53 C87,51 91,47 93,42 C92,61 76,76 53,77 C31,78 12,68 12,54 Z" />
+    </group>
+</vector>
